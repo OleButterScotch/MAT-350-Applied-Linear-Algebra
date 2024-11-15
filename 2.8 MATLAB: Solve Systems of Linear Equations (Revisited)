@@ -1,0 +1,98 @@
+%Create the coefficient matrix.  Store the coefficient matrix in A.
+A = [-2 1 2; 1 3 2; 3 -1 1]
+
+%Create the column matrix of constants.  Store the column matrix of constants in b.
+b = [0; -4; 3]
+
+%Use the inv() command to find the inverse of the matrix A.  Store the inverse matrix in invA.
+    %format rat
+invA = inv(A)
+
+%Find the solution to the linear system of equations using the inverse matrix, if the inverse matrix
+%exists.  If the inverse matrix exists, store the solution to the linear system of equations in x.
+x = invA*b
+
+%{
+Before submitting your solution, consider repeating the work above with the coefficient matrix A = [-2 1 2; 1 3 2; -1 4 4].  Do you run into any difficulties or errors when finding the solution?  Explain what is happening as a comment in your code.
+cmA = [-2 1 2; 1 3 2; -1 4 4]
+
+cmb = [0; -4; 3]
+
+invcmA = inv(cmA)
+
+x = invcmA*cmb
+
+    %This is what happens when running the coefficient matrix A in the comments:
+/**/cmA =
+
+    -2     1     2
+     1     3     2
+    -1     4     4
+
+
+cmb =
+
+     0
+    -4
+     3
+
+[Warning: Matrix is singular to working precision.] 
+[> In solution (line 20)
+In run (line 112)
+In scoringengine.runScript
+In ScoringEngineSharedVariable1 (line 1)
+In solutionTest (line 3)
+In matlab.unittest.internal.executeScriptLines (line 12)
+In matlab.unittest.internal/ScriptTestCaseProvider/evaluateTestSection (line 123)
+In matlab.unittest.internal/ScriptTestCaseProvider/runTestSection (line 117)
+In @(testCase)provider.runTestSection(testCase)', '/MATLAB/toolbox/matlab/testframework/unittest/ext/+matlab/+unittest/+internal/ScriptTestCaseProvider.m', 96)" style="font-weight:bold">matlab.unittest.internal.ScriptTestCaseProvider>@(testCase)provider.runTestSection(testCase) (line 96)
+In matlab.unittest/TestRunner/evaluateMethodCore (line 1043)
+In matlab.unittest/TestRunner/evaluateMethod (line 1488)
+In matlab.unittest.plugins/TestRunnerPlugin/evaluateMethod (line 752)
+In scoringengine/OutputPlugin/evaluateMethod
+In matlab.unittest.plugins/TestRunnerPlugin/evaluateMethod (line 752)
+In scoringengine/FiguresPlugin/evaluateMethod
+In matlab.unittest/TestRunner/evaluateMethodsOnTestContent (line 973)
+In matlab.unittest/TestRunner/runTestMethodCore (line 1159)
+In matlab.unittest/TestRunner/runTestMethod (line 1482)
+In matlab.unittest.plugins/TestRunnerPlugin/runTestMethod (line 672)
+In scoringengine/OutputPlugin/runTestMethod
+In matlab.unittest.plugins/TestRunnerPlugin/runTestMethod (line 672)
+In scoringengine/FiguresPlugin/runTestMethod
+In matlab.unittest/TestRunner/runTestCore (line 1124)
+In matlab.unittest/TestRunner/repeatTest (line 575)] 
+[In matlab.unittest/TestRunner/runSharedTestCase (line 516)
+In matlab.unittest/TestRunner/runTestClass (line 1425)
+In matlab.unittest/TestRunner/runTestSuite (line 1350)
+In matlab.unittest.plugins/TestRunnerPlugin/runTestSuite (line 265)
+In scoringengine/OutputPlugin/runTestSuite
+In matlab.unittest.plugins/TestRunnerPlugin/runTestSuite (line 265)
+In scoringengine/FiguresPlugin/runTestSuite
+In matlab.unittest.plugins/TestRunnerPlugin/runTestSuite (line 265)
+In matlab.unittest.plugins/DiagnosticsRecordingPlugin/runTestSuite (line 208)
+In matlab.unittest/TestRunner/evaluateMethodOnPlugins (line 433)
+In matlab.unittest.internal/SerialTestRunStrategy/runTestSuite (line 36)
+In matlab.unittest.internal/SerialTestRunStrategy/runSession (line 16)
+In matlab.unittest/TestRunner/runSession (line 1306)
+In matlab.unittest/TestRunner/evaluateMethodOnPlugins (line 433)
+In matlab.unittest/TestRunner/doRunWithFcn (line 421)
+In matlab.unittest/TestRunner/run (line 304)
+In scoringengine.verifyCode
+In scoringengine.verifyCode
+In connector.internal.fevalMatlab
+In connector.internal.fevalJSON
+] 
+
+invcmA =
+
+   Inf   Inf   Inf
+   Inf   Inf   Inf
+   Inf   Inf   Inf
+
+
+x =
+
+   NaN
+   NaN
+   NaN
+%}
